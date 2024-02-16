@@ -1,0 +1,21 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+.font-popins{
+    font-family: "Poppins", sans-serif;
+}
+
+.font-anton{
+    font-family: "Anton", sans-serif;
+}
+
+.btn{
+    background-color: rgb(43, 40, 40);
+    color: white;
+}
+.btn1{
+    border-radius: 5px;
+}
+
