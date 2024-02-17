@@ -10,12 +10,11 @@
 // }
 
 
-/* this is the method of using function for onclick() operation from
-    utility_function.js file
+
+
+
+/* this is the method of using function for onclick() operation from  utility_function.js file
 */ 
-
-
-
 
 function play(){
     hideElementByID('home');
@@ -24,6 +23,88 @@ function play(){
 
     // continueGame();
 }
+
+
+
+
+   // key-press events
+
+//    function keyEvent(){
+//     console.log("Key pressed");
+//    }
+
+//    document.addEventListener("keyup",keyEvent); // "keyup" means the released moment after pressing the key
+
+
+function keyboardEvent(event){
+    const playerPressed = event.key;
+    console.log("Player pressed :",playerPressed); // shows which key is being pressed
+
+
+    // get the expected key to be pressed
+    const current_alphabetElement = document.getElementById('current_alphabet');
+    const currentAlphabet = current_alphabetElement.innerText;
+    const expected = currentAlphabet.toLowerCase();
+    console.log(playerPressed,expected);
+
+
+    // check the expected and pressed key
+    
+    if(playerPressed === expected){
+        console.log("Matched! You win.");
+        console.log("You pressed correctly.", expected);
+        removeBackgroundColor(expected);
+        gameOn();
+    }
+    else{
+        console.log("Didn't match. You lost a life.");
+        
+    }
+    
+}
+
+document.addEventListener("keyup",keyboardEvent)
+
+
+
+
+function gameOn(){
+
+    const alphabet = getRandomAlphabet();
+    console.log("Your random alphabet is :",alphabet);
+    
+    const currentAlpha = document.getElementById('current_alphabet');
+    currentAlpha.innerText = alphabet;
+
+    // setting background color
+    setBackgroundColor(alphabet);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function continueGame(){
@@ -35,17 +116,7 @@ function play(){
 //     }
 
 
-function gameOn(){
-    const alphabet = getRandomAlphabet();
-    const currentAlpha = document.getElementById('current_alphabet');
-    currentAlpha.innerText = alphabet;
 
-    
-    // setting background color
-
-    setBackgroundColor(alphabet);
-    
-}
 
 
 
