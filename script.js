@@ -52,12 +52,30 @@ function keyboardEvent(event){
     
     if(playerPressed === expected){
         console.log("Matched! You win.");
-        console.log("You pressed correctly.", expected);
+        //update score part
+        const current_score = document.getElementById('current-score');
+
+        const currentScoreText = current_score.innerText;
+        const currentScoreConvert = parseInt(currentScoreText);
+        const newScore = currentScoreConvert + 1;
+
+        current_score.innerText = newScore;
+    
+    
+        // start new game
         removeBackgroundColor(expected);
         gameOn();
     }
+
     else{
         console.log("Didn't match. You lost a life.");
+        //update life part
+        const current_life = document.getElementById('current-life');
+        const life_count_text = current_life.innerText;
+        const life_convert = parseInt(life_count_text);
+        const newLife = life_convert - 1;
+
+        current_life.innerText = newLife;
         
     }
     
